@@ -9,52 +9,52 @@ namespace GGPApi.Controllers
     [ApiController]
     public class DespesaController : ControllerBase
     {
-        private readonly IDespesaInterface _despesaInterface; // Changed from IReceitaInterface to IDespesaInterface
+        private readonly IDespesaInterface _despesaInterface; 
 
-        public DespesaController(IDespesaInterface despesaInterface) // Changed from ReceitaController to DespesaController
+        public DespesaController(IDespesaInterface despesaInterface) 
         {
             _despesaInterface = despesaInterface;
         }
 
-        [HttpGet("ListarDespesas")] // Changed from ListarReceitas to ListarDespesas
-        public async Task<ActionResult<ResponseModel<List<DespesaModel>>>> ListarDespesas() // Changed from ListarReceitas to ListarDespesas
+        [HttpGet("ListarDespesas")] 
+        public async Task<ActionResult<ResponseModel<List<DespesaModel>>>> ListarDespesas() 
         {
-            var despesas = await _despesaInterface.ListarDespesas(); // Changed from ListarReceitas to ListarDespesas
+            var despesas = await _despesaInterface.ListarDespesas(); 
             return Ok(despesas);
         }
 
-        [HttpGet("BuscarDespesasPorId/{idDespesa}")] // Changed from BuscarReceitaPorId to BuscarDespesaPorId
-        public async Task<ActionResult<ResponseModel<DespesaModel>>> BuscarDespesaPorId(int idDespesa) // Changed from BuscarReceitasPorId to BuscarDespesaPorId
+        [HttpGet("BuscarDespesasPorId/{idDespesa}")] 
+        public async Task<ActionResult<ResponseModel<DespesaModel>>> BuscarDespesaPorId(int idDespesa)
         {
-            var despesa = await _despesaInterface.BuscarDespesaPorId(idDespesa); // Changed from BuscarReceitasPorId to BuscarDespesaPorId
+            var despesa = await _despesaInterface.BuscarDespesaPorId(idDespesa); 
             return Ok(despesa);
         }
 
-        [HttpGet("BuscarDespesasPorIdUser/{idUser}")] // Changed from BuscarReceitaPorIdUser to BuscarDespesaPorIdUser
-        public async Task<ActionResult<ResponseModel<UserModel>>> BuscarDespesasPorIdUser(int idUser) // Changed from BuscarReceitasPorIdUser to BuscarDespesaPorIdUser
+        [HttpGet("BuscarDespesasPorIdUser/{idUser}")] 
+        public async Task<ActionResult<ResponseModel<UserModel>>> BuscarDespesasPorIdUser(int idUser) 
         {
-            var despesa = await _despesaInterface.BuscarDespesasPorIdUser(idUser); // Changed from BuscarReceitasPorIdUser to BuscarDespesaPorIdUser
+            var despesa = await _despesaInterface.BuscarDespesasPorIdUser(idUser); 
             return Ok(despesa);
         }
 
-        [HttpPost("CriarDespesas")] // Changed from CriarReceitas to CriarDespesa
-        public async Task<ActionResult<ResponseModel<List<DespesaModel>>>> CriarDespesas(DespesaCriacaoDto despesaCriacaoDto) // Changed from CriarReceitas to CriarDespesa
+        [HttpPost("CriarDespesas")] 
+        public async Task<ActionResult<ResponseModel<List<DespesaModel>>>> CriarDespesas(DespesaCriacaoDto despesaCriacaoDto) 
         {
-            var despesa = await _despesaInterface.CriarDespesas(despesaCriacaoDto); // Changed from CriarReceitas to CriarDespesa
+            var despesa = await _despesaInterface.CriarDespesas(despesaCriacaoDto);
             return Ok(despesa);
         }
 
-        [HttpPut("EditarDespesas")] // Changed from EditarReceitas to EditarDespesa
-        public async Task<ActionResult<ResponseModel<List<DespesaModel>>>> EditarDespesas(DespesaEdicaoDto despesaEdicaoDto) // Changed from EditarReceitas to EditarDespesa
+        [HttpPut("EditarDespesas")] 
+        public async Task<ActionResult<ResponseModel<List<DespesaModel>>>> EditarDespesas(DespesaEdicaoDto despesaEdicaoDto) 
         {
-            var despesa = await _despesaInterface.EditarDespesas(despesaEdicaoDto); // Changed from EditarReceitas to EditarDespesa
+            var despesa = await _despesaInterface.EditarDespesas(despesaEdicaoDto); 
             return Ok(despesa);
         }
 
-        [HttpDelete("DeletarDespesas")] // Changed from DeletarReceitas to DeletarDespesa
-        public async Task<ActionResult<ResponseModel<List<DespesaModel>>>> DeletarDespesas(int idDespesa) // Changed from DeletarReceitas to DeletarDespesa
+        [HttpDelete("DeletarDespesas")] 
+        public async Task<ActionResult<ResponseModel<List<DespesaModel>>>> DeletarDespesas(int idDespesa) 
         {
-            var despesa = await _despesaInterface.DeletarDespesas(idDespesa); // Changed from DeletarReceitas to DeletarDespesa
+            var despesa = await _despesaInterface.DeletarDespesas(idDespesa); 
             return Ok(despesa);
         }
     }
