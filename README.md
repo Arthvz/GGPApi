@@ -1,7 +1,8 @@
 # GGPApi
 
 ## Propósito
-Este projeto é uma API para gerenciar usuários, receitas e despesas, permitindo a criação, consulta e cálculo de saldo e balanço mensal.
+Este projeto é uma API para gerenciar usuários, receitas e despesas, permitindo a criação, consulta dos campos e cálculo de saldo e balanço mensal.
+Projeto criado para avaliação.
 
 ## Requisitos
 - .NET 8.0 SDK
